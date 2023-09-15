@@ -7,17 +7,13 @@ public class AgenciaBancaria {
         Queue<Integer> filaGeral = new LinkedList<>();
         Queue<Integer> filaPrioridade = new LinkedList<>();
 
-        // Adicionar senhas à fila geral
         for (int i = 1; i <= 200; i++) {
             filaGeral.offer(i);
 
-            // Verificar se a senha é ímpar e até 100 para adicionar à fila de prioridade
             if (i % 2 != 0 && i <= 100) {
                 filaPrioridade.offer(i);
             }
         }
-
-        // Simulação do atendimento
         while (!filaGeral.isEmpty()) {
             int senhaAtual = filaGeral.poll();
 
